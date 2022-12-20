@@ -74,6 +74,7 @@ export async function getStaticProps(context: {
   const { Events }: EventsPageProps = await import(
     "../../../../data/eventsdata.json"
   );
+  
   const id = context?.params.CatagoryId;
   const data = Events.filter((ev) => ev.city === id);
 
