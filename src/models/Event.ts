@@ -6,7 +6,6 @@ export class EventModel{
     Description : string = "";
     Image : string= "";
     emails_registered: string[] = [];
-    test: number= 22
 
     constructor(id : string,title : string,description : string, image : string, city: string){
         this.Id = id;
