@@ -1,0 +1,56 @@
+import React from "react";
+
+interface ButtonProps {
+  /**
+   * Is this the principal call to action on the page?
+   */
+  primary?: boolean;
+  /**
+   * How large should the button be?
+   */
+  size?: "small" | "medium" | "large";
+  /**
+   * Button contents
+   */
+  label: string;
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
+}
+
+/**
+ * Primary UI component for user interaction
+ */
+export const UIButton = ({
+  primary = false,
+  size = "medium",
+  label,
+  ...props
+}: ButtonProps) => {
+  const bgColor = primary ? " bg-uxbee-yellow" : " bg-uxbee-black";
+  const TextColor = primary ? " text-uxbee-black" : " text-uxbee-white";
+  const bgColorHover = primary
+    ? " hover:bg-uxbee-black"
+    : " hover:bg-uxbee-yellow";
+  const TextColorHover = primary
+    ? " hover:text-uxbee-yellow"
+    : " hover:text-uxbee-black";
+  return (
+    <button
+      type="button"
+      //'storybook-button', `storybook-button--${size}`,
+      className={[
+        "p-4 rounded-tr-3xl rounded-l-3xl font-bold",
+        bgColor,
+        TextColor,
+        bgColorHover,
+        TextColorHover,
+      ].join(" ")}
+      //style={{ backgroundColor }}
+      {...props}
+    >
+      {label}
+    </button>
+  );
+};
