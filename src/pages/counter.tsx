@@ -3,7 +3,7 @@ import { UIButton } from "@components/UI/molecules/UIButton";
 import React, { useState } from "react";
 
 const CounterPage = () => {
-  const [Counter, setCounter] = useState(0);
+  const [Counter, setCounter] = useState<number>(0);
 
   return (
     <>

@@ -21,7 +21,10 @@ const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Events", href: "/events", current: false },
   { name: "Counter", href: "/counter", current: false },
-  { name: "Weatherforecast", href: "/weatherforecast", current: false },  
+  { name: "CSR", href: "/weatherforecastCSR", current: false },  
+  { name: "SSR", href: "/weatherforecastSSR", current: false },  
+  { name: "SSG", href: "/weatherforecastSSG", current: false },  
+  { name: "ISR", href: "/weatherforecastISR", current: false },  
 ];
 
 const userNavigation = [

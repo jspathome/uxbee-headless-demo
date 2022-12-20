@@ -6,18 +6,38 @@ interface WeatherForecastProps {
   Data: WeatherForecast[];
 }
 
-const WeatherforecastPage = ({ Data }: WeatherForecastProps) => {
+const WeatherforecastSSGPage = ({ Data }: WeatherForecastProps) => {
   return (
     <>
-      <div>Weatherforecast</div>
+      <div>Weatherforecast Static Site Generation</div>
 
       <table className="table-auto">
         <thead className="bg-white border-b">
           <tr>
-            <th scope="col" className="text-sm font-bold text-gray-900 px-6 py-4 text-left">Date</th>
-            <th scope="col" className="text-sm font-bold text-gray-900 px-6 py-4 text-end">Temp C.</th>
-            <th scope="col" className="text-sm font-bold text-gray-900 px-6 py-4 text-end">Temp F.</th>
-            <th scope="col" className="text-sm font-bold text-gray-900 px-6 py-4 text-left">Summery</th>
+            <th
+              scope="col"
+              className="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+            >
+              Date
+            </th>
+            <th
+              scope="col"
+              className="text-sm font-bold text-gray-900 px-6 py-4 text-end"
+            >
+              Temp C.
+            </th>
+            <th
+              scope="col"
+              className="text-sm font-bold text-gray-900 px-6 py-4 text-end"
+            >
+              Temp F.
+            </th>
+            <th
+              scope="col"
+              className="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+            >
+              Summery
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +56,24 @@ const WeatherforecastPage = ({ Data }: WeatherForecastProps) => {
     </>
   );
 };
+
+// export async function getStaticProps(): Promise<
+//   GetStaticPropsResult<WeatherForecastProps>
+// > {
+
+//   const res = await fetch("/api/weather-forecast");
+//   const data = await res.json();
+
+//   return {
+//     props: {
+//       Data: data,
+//     },
+//     // Next.js will attempt to re-generate the page:
+//     // - When a request comes in
+//     // - At most once every 10 seconds
+//     // revalidate: 10, // In seconds
+//   };
+// }
 
 function RandomNumber(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -79,9 +117,9 @@ export async function getStaticProps(): Promise<
 
   return {
     props: {
-      Data: JSON.parse(JSON.stringify(wfList))   
+      Data: JSON.parse(JSON.stringify(wfList))
     },
   };
 }
 
-export default WeatherforecastPage;
+export default WeatherforecastSSGPage;

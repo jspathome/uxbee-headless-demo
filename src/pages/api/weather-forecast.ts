@@ -48,7 +48,9 @@ export default function handler(
         wfList.push(w);
     }
 
+    for(let i= 0; i <= 1000; i++)
+    {
+    }
+
     res.status(200).json({ weatherforecasts: wfList })
 }
-
-//"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
