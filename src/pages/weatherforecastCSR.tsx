@@ -91,6 +91,9 @@ const WeatherforecastCSRPage: NextPage<PageProps>  = ({Domain}) => {
 };
 
 WeatherforecastCSRPage.getInitialProps = async ({ req }) => {
+
+  console.log("WeatherforecastCSRPage getInitialProps Triggerd.");
+
   const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
   const host = req ? req.headers.host : "";
   const domain = ["http://",host].join("");

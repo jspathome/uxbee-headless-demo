@@ -15,7 +15,7 @@ function UIMenu({ Items }: MenuProps) {
 
       <div className="bg-uxbee-black">
         {Items.map((item) => (
-          <div className="block">
+          <div key={item.Id} className="block">
             {item.Text}
             {/* <UILink HRef={item.HRef} Text={item.Text} Color="secundary" /> */}
           </div>

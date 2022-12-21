@@ -1,6 +1,7 @@
 import React from "react";
 import { WeatherForecast } from "src/models/WeatherForecast";
 import { GetStaticPropsResult, GetStaticProps } from "next";
+import UIPageTitle from "@components/UI/atoms/UIPageTitle";
 
 interface WeatherForecastProps {
   Data: WeatherForecast[];
@@ -9,8 +10,7 @@ interface WeatherForecastProps {
 const WeatherforecastSSRPage = ({ Data }: WeatherForecastProps) => {
   return (
     <>
-      <div>Weatherforecast Server-Side Rendering</div>
-
+      <UIPageTitle title="Weatherforecast Server-Side Rendering" />
       <table className="table-auto">
         <thead className="bg-white border-b">
           <tr>
@@ -65,9 +65,12 @@ function ConvertCelsius2Farenheit(celsius: number): number {
   return Math.round(32 + celsius / 0.5556);
 }
 
-export async function getStaticProps(): Promise<
+export async function getServerSideProps(): Promise<
   GetStaticPropsResult<WeatherForecastProps>
 > {
+
+  console.log("WeatherforecastSSRPage getStaticProps Triggerd.");
+
   const summeries: string[] = [
     "Freezing",
     "Bracing",

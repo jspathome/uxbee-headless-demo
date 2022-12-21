@@ -4,6 +4,7 @@ import { Catagory } from "src/models/Catagory";
 import Image from "next/image";
 import Link from "next/link";
 import UIPageTitle from "@components/UI/atoms/UIPageTitle";
+
 interface EventsPageProps {
   Catagories: Catagory[];
 }

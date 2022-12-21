@@ -1,6 +1,7 @@
 import React from "react";
 import { WeatherForecast } from "src/models/WeatherForecast";
 import { GetStaticPropsResult, GetStaticProps } from "next";
+import UIPageTitle from "@components/UI/atoms/UIPageTitle";
 
 interface WeatherForecastProps {
   Data: WeatherForecast[];
@@ -9,8 +10,7 @@ interface WeatherForecastProps {
 const WeatherforecastISRPage = ({ Data }: WeatherForecastProps) => {
   return (
     <>
-      <div>Weatherforecast Incremental Static Regeneration</div>
-
+      <UIPageTitle title="Weatherforecast Incremental Static Regeneration" />
       <table className="table-auto">
         <thead className="bg-white border-b">
           <tr>
@@ -68,6 +68,9 @@ function ConvertCelsius2Farenheit(celsius: number): number {
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<WeatherForecastProps>
 > {
+
+  console.log("WeatherforecastCSRPage getStaticProps Triggerd.");
+
   const summeries: string[] = [
     "Freezing",
     "Bracing",

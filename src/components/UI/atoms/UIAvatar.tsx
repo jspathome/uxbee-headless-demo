@@ -5,7 +5,7 @@ interface AvatarButtonProps {
 }
 
 const UIAvatar = ({ imageUrl }: AvatarButtonProps) => {
-
+  
   return <img className="h-8 w-8 rounded-full" src={imageUrl} alt="AvatarImage" />;
 };
 
